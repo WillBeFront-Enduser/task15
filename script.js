@@ -23,4 +23,20 @@ if (!localStorage.getItem("nickname")) {
     // Add the message to the display
     display.innerHTML += `<p><strong>${nickname}:</strong> ${message}</p>`;
   });
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+  
+    // Get the message and nickname
+    const message = input.value;
+    const nickname = localStorage.getItem("nickname");
+  
+    // Clear the input field
+    input.value = "";
+  
+    // Add the message to the display
+    display.innerHTML += `<p><strong>${nickname}:</strong> ${message}</p>`;
+  
+    // Change the background color of the chat interface
+    document.querySelector("#chat").style.backgroundColor = "rgb(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + ")";
+  });
   
